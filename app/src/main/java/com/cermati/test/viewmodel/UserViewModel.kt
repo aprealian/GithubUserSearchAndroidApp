@@ -24,13 +24,6 @@ class UserViewModel(private val repository: UserDataSource): ViewModel() {
 
     val field = UserField("", 1, 10)
 
-    /*
-    If you require that the data be loaded only once, you can consider calling the method
-    "loadMuseums()" on constructor. Also, if you rotate the screen, the service will not be called.
-     */
-    init {
-        //loadUsers()
-    }
 
     fun loadUsers(){
         _isViewLoading.postValue(true)

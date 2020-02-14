@@ -24,59 +24,25 @@ allprojects {
 }
 
 ext {
-    appVersionCode = 143
-    appVersionName = '1.3.2'
     appCompat = '1.1.0-alpha01'
     archLifecycle = '2.0.0'
     recyclerView = '1.1.0-beta03'
     cardView = '1.0.0'
     constraintLayout = '1.1.3'
-    room = '1.1.1'
-    scrollingPagerIndicator = '1.0.6'
-    sparkButton = '1.0.6'
     gson = '2.8.5'
     glide = '4.9.0'
     retrofit = '2.5.0'
-    chuck = '3.0.1'
-    photoView = '2.0.0'
+    chuck = '1.1.0'
     okHttp = '3.8.1'
-    imageCropper = '2.8.+'
-    googleService = '16.0.0'
-    firebaseCore = '17.1.0'
-    firebaseAuth = '19.0.0'
-    firebaseMessaging = '20.0.0'
-    firebaseRemoteConfig = '18.0.0'
-    firebasePerformance = '19.0.0'
-    facebookLogin = '5.11.0'
-    playServiceAuth = '17.0.0'
-    multidex = '1.0.3'
-    scalableVideoView = '1.0.4'
+    multidex = '2.0.1'
     jUnit = '4.12'
     testRunner = '1.1.1-alpha01'
     expresso = '3.1.1-alpha01'
-    koin = '2.0.0-rc-2'
     googleMaterial = '1.0.0-alpha1'
-    var = JavaVersion.VERSION_1_8
-    var1 = JavaVersion.VERSION_1_8
-    var2 = '3.5.0-alpha13'
-    midtransSdkVersion = '1.23.1'
-    midtransSdkCoreKit = '1.23.1'
-//    midtransSdkVersion = '1.23.1-SANDBOX' // untuk development
-//    midtransSdkCoreKit = '1.23.1-SANDBOX' // untuk development
-    crashlytics = '2.10.1'
     shimmer = '0.1.0@aar'
-    progressBar = '1.6.1'
     anko= '0.10.8'
     design= '23.0.1'
-    qiscusChat = '1.2.14'
-    loremGenerator = '2.1'
-    billingClient = '1.2'
-    flexBoxLayout = '1.1.1'
     dexter = '5.0.0'
-    qrCode = '3.3.3'
-    authPhone = '17.3.0'
-    googleMap = '15.0.1'
-    captcha = '17.0.0'
 }
 
 

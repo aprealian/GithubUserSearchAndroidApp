@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var adapter:UserAdapter
     private lateinit var layoutManager:LinearLayoutManager
     private var isInit: Boolean = true
+    private var isLastPage: Boolean = false
 
     companion object {
         const val TAG= "CONSOLE"
@@ -45,6 +46,8 @@ class MainActivity : AppCompatActivity() {
             override fun afterTextChanged(s: Editable?) {
                 // part of search suggestion
                 adapter.clear()
+                isLastPage = false
+
                 val keyword = s.toString().trim()
                 viewModel.field.search = keyword
                 viewModel.field.page = 1
@@ -61,12 +64,10 @@ class MainActivity : AppCompatActivity() {
                     val pastVisiblesItems = layoutManager.findFirstVisibleItemPosition()
 
                     if ((visibleItemCount + pastVisiblesItems) >= totalItemCount) {
-//                        if (!viewModel.isMajorReachLastPage && !viewModel.isProcessing.value!!.fetchingProgramStudi) {
-//                            viewModel.field.page = viewModel.currentProgramStudiPage + 1
-//                            viewModel.getProgramStudi(this@ProgramStudiActivity, config.token())
-//                        }
-                        viewModel.field.page += 1
-                        viewModel.loadUsers()
+                        if (!isLastPage && viewModel.isViewLoading.value != null && viewModel.isViewLoading.value == false){
+                            viewModel.field.page += 1
+                            viewModel.loadUsers()
+                        }
                     }
                 }
             }
@@ -121,6 +122,7 @@ class MainActivity : AppCompatActivity() {
         Log.v(TAG, "emptyListObserver $it")
         progressBar.visibility = View.GONE
         isEmptyList()
+        isLastPage = true
     }
 
     private fun isEmptyList(){
