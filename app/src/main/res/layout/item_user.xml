@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:paddingLeft="@dimen/paddingSM"
+    android:paddingRight="@dimen/paddingSM"
+    android:paddingTop="@dimen/paddingSM"
+    android:background="@color/white_2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageUser"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        app:layout_constraintTop_toTopOf="@id/imageUser"
+        app:layout_constraintBottom_toBottomOf="@id/imageUser"
+        app:layout_constraintLeft_toRightOf="@+id/imageUser"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/textUserName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:textSize="@dimen/fontM"
+        android:textColor="@color/text"
+        android:maxLines="1"
+        tools:text="John Doe"
+        />
+
+
+    <View
+        app:layout_constraintTop_toBottomOf="@+id/imageUser"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="@dimen/marginSM"
+        android:background="#B7BEBE"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

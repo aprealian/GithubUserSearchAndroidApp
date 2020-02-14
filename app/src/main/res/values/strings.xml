@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Github Test</string>
+
+
+    <string name="search_user_hint">Search Github users</string>
+    <string name="result_not_found">Result not found</string>
+
+    <string name="api_error_something_wrong">Result not found</string>
+    <string name="api_error_excedeed_limit">API rate limit exceeded</string>
+
+</resources>
