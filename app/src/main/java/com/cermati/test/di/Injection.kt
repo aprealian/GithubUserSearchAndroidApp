@@ -1,8 +1,8 @@
 package com.cermati.test.di
 
 import android.content.Context
-import com.cermati.test.model.UserRepository
-import com.cermati.test.model.UserDataSource
+import com.cermati.test.myapi.repository.UserRepository
+import com.cermati.test.myapi.datasource.UserDataSource
 
 object Injection {
 

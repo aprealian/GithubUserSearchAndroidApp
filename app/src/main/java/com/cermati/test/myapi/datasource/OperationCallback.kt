@@ -1,4 +1,4 @@
-package com.cermati.test.data
+package com.cermati.test.myapi.datasource
 
 interface OperationCallback {
     fun onSuccess(obj:Any?)

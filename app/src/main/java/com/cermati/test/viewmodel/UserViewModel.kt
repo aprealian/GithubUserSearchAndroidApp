@@ -3,10 +3,10 @@ package com.cermati.test.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.cermati.test.data.OperationCallback
+import com.cermati.test.myapi.datasource.OperationCallback
 import com.cermati.test.model.User
-import com.cermati.test.model.UserDataSource
-import com.cermati.test.model.UserField
+import com.cermati.test.myapi.datasource.UserDataSource
+import com.cermati.test.myapi.field.UserField
 
 class UserViewModel(private val repository: UserDataSource): ViewModel() {
 
@@ -27,7 +27,8 @@ class UserViewModel(private val repository: UserDataSource): ViewModel() {
 
     fun loadUsers(){
         _isViewLoading.postValue(true)
-        repository.retrieveUsers(field, object: OperationCallback {
+        repository.retrieveUsers(field, object:
+            OperationCallback {
             override fun onError(obj: Any?) {
                 _isViewLoading.postValue(false)
                 _onMessageError.postValue( obj)

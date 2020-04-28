@@ -1,24 +1,28 @@
-package com.cermati.test.model
+package com.cermati.test.myapi.repository
 
 import android.content.Context
 import android.util.Log
 import com.cermati.test.R
-import com.cermati.test.data.ApiClient
-import com.cermati.test.data.UserResponse
-import com.cermati.test.data.OperationCallback
+import com.cermati.test.myapi.datasource.OperationCallback
+import com.cermati.test.myapi.datasource.UserDataSource
+import com.cermati.test.myapi.field.UserField
+import com.cermati.test.myapi.response.UserResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 const val TAG="CONSOLE"
 
-class UserRepository(val context:Context):UserDataSource {
+class UserRepository(val context:Context):
+    UserDataSource {
 
     private var call:Call<UserResponse>?=null
 
     override fun retrieveUsers(field: UserField, callback: OperationCallback) {
 
-        call = ApiClient(context).build()?.users(field.search, field.page)
+        //call = ApiClient(context).build()?.users(field.search, field.page)
+        call = SearchUsersApiClient(context)
+            .build()?.users(field.search, field.page)
 
         call?.enqueue(object :Callback<UserResponse>{
             override fun onFailure(call: Call<UserResponse>, t: Throwable) {

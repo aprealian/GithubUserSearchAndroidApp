@@ -1,4 +1,4 @@
-package com.cermati.test.data
+package com.cermati.test.myapi.response
 import com.cermati.test.model.User
 import com.google.gson.annotations.SerializedName
 
